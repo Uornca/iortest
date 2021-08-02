@@ -1,0 +1,38 @@
+IOR-3.4.0+dev: MPI Coordinated Test of Parallel I/O
+Began               : Mon Aug  2 15:40:17 2021
+Command line        : ./src/ior
+Machine             : Linux uornca-laptop
+TestID              : 0
+StartTime           : Mon Aug  2 15:40:17 2021
+Path                : testFile
+FS                  : 116.4 GiB   Used FS: 60.8%   Inodes: 7.4 Mi   Used Inodes: 13.3%
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : testFile
+access              : single-shared-file
+type                : independent
+segments            : 1
+ordering in a file  : sequential
+ordering inter file : no tasks offsets
+nodes               : 1
+tasks               : 1
+clients per node    : 1
+repetitions         : 1
+xfersize            : 262144 bytes
+blocksize           : 1 MiB
+aggregate filesize  : 1 MiB
+
+Results: 
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+write     1391.15    5821       0.000172    1024.00    256.00     0.000028   0.000687   0.000003   0.000719   0   
+read      8405       35099      0.000028    1024.00    256.00     0.000003   0.000114   0.000002   0.000119   0   
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write        1391.15    1391.15    1391.15       0.00    5564.58    5564.58    5564.58       0.00    0.00072         NA            NA     0      1   1    1   0     0        1         0    0      1  1048576   262144       1.0 POSIX      0
+read         8405.42    8405.42    8405.42       0.00   33621.68   33621.68   33621.68       0.00    0.00012         NA            NA     0      1   1    1   0     0        1         0    0      1  1048576   262144       1.0 POSIX      0
+Finished            : Mon Aug  2 15:40:17 2021
